@@ -1,0 +1,16 @@
+name: Update Release Branch
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  update-release-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update release branch
+        run: |
+          git checkout release
+          git reset --hard ${{ github.ref_name }}
+          git push origin release
