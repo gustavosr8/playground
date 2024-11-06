@@ -16,6 +16,4 @@ jobs:
           fetch-depth: 0
       - name: Update release branch
         run: |
-          git checkout release
-          git reset --hard ${{ github.ref_name }}
-          git push origin release
+          git push origin ${{ github.ref_name }}:release
