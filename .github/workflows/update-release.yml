@@ -4,6 +4,9 @@ on:
     tags:
       - '*'
 
+permissions:
+  contents: write
+
 jobs:
   update-release-branch:
     runs-on: ubuntu-latest
